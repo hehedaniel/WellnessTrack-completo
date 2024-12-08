@@ -33,7 +33,7 @@ Este script configura automáticamente dos contenedores Docker: uno para el back
    - Un contenedor Docker para el frontend estará disponible en [http://localhost:4200](http://localhost:4200).
 
 3. **Servicios adicionales**:
-   - PhpMyAdmin: [http://localhost:8080/phpmyadmin/index.php?route=/database/structure&db=api](http://localhost:8080).
+   - PhpMyAdmin: [http://localhost:8080](http://localhost:8080/phpmyadmin/index.php?route=/database/structure&db=api).
 
 ### Opción 2: Instalación por paquetes con `instalarRequisitos.sh`
 
@@ -56,14 +56,14 @@ Este método instala los paquetes necesarios para configurar el entorno manualme
    ```
 
 4. **Resultados**:
-   - El backend estará disponible en [http://localhost:8000](http://localhost:8080).
+   - El backend estará disponible en [http://localhost:8000](http://localhost:8000).
    - El frontend estará disponible en [http://localhost:4200](http://localhost:4200).
 
 ## Uso
 
 ### Backend
 
-Acceda al backend en [http://localhost:8000/main](http://localhost:8080).
+Acceda al backend en [http://localhost:8000](http://localhost:8000/main).
 
 ### Frontend
 
@@ -71,7 +71,7 @@ Acceda al frontend en [http://localhost:4200](http://localhost:4200).
 
 ### PhpMyAdmin
 
-Administre bases de datos en [http://localhost:8080/phpmyadmin/index.php?route=/database/structure&db=api](http://localhost:8080).
+Administre bases de datos en [http://localhost:8080/](http://localhost:8080/phpmyadmin/index.php?route=/database/structure&db=api).
 
 ## Características
 
