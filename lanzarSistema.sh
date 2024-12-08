@@ -1,13 +1,14 @@
 #!/bin/bash
 
 # Descargamos la imagen de Docker
-sudo docker pull hehedaniel/backcompleto:backfuncional
+sudo docker pull hehedaniel/wellnesstrackback:v1
 
 # Creas la red para el contenedor
-sudo docker network create --driver bridge --subnet 172.79.0.0/16 --gateway 172.79.0.1 redApi
+sudo docker network create --driver bridge --subnet 172.16.0.0/16 --gateway 172.16.0.1 Wellnesstrack-red
 
 # Creas el contenedor en base a la imagen que descargamos anteriormente
-sudo docker run -d --name backXampp -p 8080:80 -p 8081:3306 -p 8000:8000 --ip 172.79.0.3 --network redApi -v ./WellnessTrack-api:/home/docker --entrypoint /bin/sh hehedaniel/backcompleto:backfuncional -c "/opt/lampp/lampp start && cd /home/docker/Wellnesstrack-api && symfony server:start --port=8000"
+
+sudo docker run -d --name wellnesstrackback -p 8080:80 -p 8081:3306 -p 8000:8000 --ip 172.16.0.8 --network Wellnesstrack-red hehedaniel/wellnesstrackback:v1 /bin/bash -c "./lanzar.sh"
 
 cd WellnessTrack-angular
 npm install

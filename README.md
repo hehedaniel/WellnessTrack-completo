@@ -1,47 +1,90 @@
+# WellnessTrack Deployment
 
-# WellnessTrack
+## Introducción
 
-Este es el repositorio completo para el proyecto WellnessTrack, cuenta con las diferentes Guías de usuario y Documentación, además de los scripts de automatización.
+Este proyecto utiliza Docker para implementar un sistema compuesto por un backend y un frontend. Proporciona scripts para automatizar la configuración y ejecución de los servicios necesarios, incluyendo la instalación de dependencias como Docker y Docker Compose.
 
-## Instalación automatizada
+## Tabla de Contenidos
 
-Para lanzar el proyecto completo hay dos opciones:
+- [Instalación](#instalación)
+  - [Opción 1: Instalación con `lanzarDockerProyecto.sh`](#opción-1-instalación-con-lanzardockerproyectossh)
+  - [Opción 2: Instalación por paquetes con `instalarRequisitos.sh`](#opción-2-instalación-por-paquetes-con-instalarrequisitoss)
+- [Uso](#uso)
+- [Características](#características)
+- [Requisitos Previos](#requisitos-previos)
+- [Contribuidores](#contribuidores)
+- [Licencia](#licencia)
 
-- Opición 1: Instalación desde 0
+## Instalación
 
-En esta opcion partimos de que no tenemos nada instalado, como si fuera un sistema recién instalado.
+### Opción 1: Instalación con `lanzarDockerProyecto.sh`
 
-Debemos ejecutar el primer script llamado "instalarRequisitos.sh" para que descargue todas lo que necesita el proyecto para funcionar al completo.
+Este script configura automáticamente dos contenedores Docker: uno para el backend y otro para el frontend.
 
-```bash
-  chmod +x instalarRequisitos.sh
-  ./instalarRequisitos.sh
-```
+1. **Ejecute el script**:
 
-Esto nos descargara todo lo necesario y además nos clonara los repositorios en una carpeta hermana desde la que realizamos esta ejecución, la nueva carpeta se llamara ProyectoWellnessTrack en la que encontraremos los repositorios "WellnessTrack-api" y "WellnessTrack-angular".
+   ```
+   bash lanzarDockerProyecto.sh
+   ```
 
-- Opición 2: Contamos todo descargado e instalado
+2. **Resultados**:
 
-Para esta opción debemos tener el siguiente árbol de carpetas.
+   - Un contenedor Docker para el backend estará disponible en [http://localhost:8080](http://localhost:8080).
+   - Un contenedor Docker para el frontend estará disponible en [http://localhost:4200](http://localhost:4200).
 
-WellnessTrack-completo (carpeta de este repositorio)
+3. **Servicios adicionales**:
+   - PhpMyAdmin: [http://localhost:8080](http://localhost:8080).
 
-ProyectoWellnessTrack (carpeta hermana con los repositorios WellnessTrack-api y WellnessTrack-angular descargados)
+### Opción 2: Instalación por paquetes con `instalarRequisitos.sh`
 
-Si ya contamos con todo lo necesario descargad, instalado y listo para funcionar solo tenemos que lanzar nuestro docker, api y Angular.
+Este método instala los paquetes necesarios para configurar el entorno manualmente antes de lanzar el sistema.
 
-Debemos encontrarnos en la carpeta WellnessTrack-completo y ejecutar los siguientes comandos
+1. **Ejecute el script**:
 
-```bash
-  chmod +x lanzarSistema.sh
-  ./lanzarSistema.sh
-```
+   ```
+   bash instalarRequisitos.sh
+   ```
 
-Este script nos lanzará el docker con Lampp funcionando, la api corriendo y nos abrirá la ventana de nuestro navegador predeterminado con Angular.
+2. **Verifique las instalaciones**:
+   El script instalará automáticamente Docker, Docker Compose, Node.js, Angular CLI, Composer y otras dependencias necesarias, verificando que todo esté configurado correctamente.
 
-## Instalación manual
+3. **Ejecución del sistema**:
+   Luego, use el script `lanzarSistema.sh` para ejecutar el backend y el frontend:
 
-Para la instalación manual de alguno de los apartados recomendamos dirijirse a README del repositorio de dicho apartado:
+   ```
+   bash lanzarSistema.sh
+   ```
 
-- [WellnessTrack - Angular ](https://github.com/hehedaniel/WellnessTrack-angular?tab=readme-ov-file#wellnesstrack---angular)
-- [WellnessTrack - api ](https://github.com/hehedaniel/WellnessTrack-api?tab=readme-ov-file#wellnesstrack---api)
+4. **Resultados**:
+   - El backend estará disponible en [http://localhost:8080](http://localhost:8080).
+   - El frontend estará disponible en [http://localhost:4200](http://localhost:4200).
+
+## Uso
+
+### Backend
+
+Acceda al backend en [http://localhost:8080](http://localhost:8080).
+
+### Frontend
+
+Acceda al frontend en [http://localhost:4200](http://localhost:4200).
+
+### PhpMyAdmin
+
+Administre bases de datos en [http://localhost:8080](http://localhost:8080).
+
+## Características
+
+- Automatización de la configuración de contenedores Docker.
+- Scripts detallados para facilitar la instalación y configuración.
+- Separación clara entre backend y frontend.
+
+## Requisitos Previos
+
+- Sistema operativo basado en Linux.
+- Permisos de superusuario (sudo).
+- Conexión a internet (para descargar dependencias y contenedores).
+
+## Contribuidores
+
+- **Daniel** - [GitHub](https://github.com/hehedaniel)

@@ -19,6 +19,8 @@ sudo apt install -y docker-ce
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
+clear
+
 # Verificar instalaciones
 echo "Verificando las instalaciones..."
 node -v
@@ -28,16 +30,5 @@ composer --version
 docker --version
 docker-compose --version
 
-# Descargar los repositorios
-
-cd ..
-
-mkdir ProyectoWellnessTrack
-
-echo "Aqui se clonaran ambos proyectos."
-
-git clone https://github.com/hehedaniel/WellnessTrack-api.git
-
-git clone https://github.com/hehedaniel/WellnessTrack-angular.git
 
 echo "Todo está instalado y configurado."
