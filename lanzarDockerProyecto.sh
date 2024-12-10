@@ -25,19 +25,19 @@ if [ -z "$FRONTEND_NAME" ]; then
     FRONTEND_NAME="wellnesstrackfront"
 fi
 
-# Creamos el contenedor para el back
+# Crear el contenedor para el back
 
 clear
 
-sudo docker pull hehedaniel/wellnesstrackback:v1
+sudo docker pull hehedaniel/wellnesstrackback:v3
 
-sudo docker run -d --name "$BACKEND_NAME" -p 8080:80 -p 8081:3306 -p 8000:8000 --ip 172.16.0.8 --network Wellnesstrack-red hehedaniel/wellnesstrackback:v1 /bin/bash -c "./lanzar.sh"
+sudo docker run -d --name "$BACKEND_NAME" -p 8080:80 -p 8081:3306 -p 8000:8000 --ip 172.16.0.8 --network Wellnesstrack-red hehedaniel/wellnesstrackback:v3 /bin/bash -c "./lanzar.sh"
 
-# Creamos el contenedor para el front
+# Crear el contenedor para el front
 
-sudo docker pull hehedaniel/wellnesstrackfront:v1
+sudo docker pull hehedaniel/wellnesstrackfront:v3
 
-sudo docker run -d --name "$FRONTEND_NAME" -p 4200:4200 --ip 172.16.0.4 --network Wellnesstrack-red hehedaniel/wellnesstrackfront:v1 /bin/bash -c "./lanzar.sh"
+sudo docker run -d --name "$FRONTEND_NAME" -p 4200:4200 --ip 172.16.0.4 --network Wellnesstrack-red hehedaniel/wellnesstrackfront:v3 /bin/bash -c "./lanzar.sh"
 
 # Script terminado
 

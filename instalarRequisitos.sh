@@ -21,6 +21,8 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 clear
 
+git clone https://github.com/hehedaniel/Wellnesstrack-Front
+
 # Verificar instalaciones
 echo "Verificando las instalaciones..."
 node -v
