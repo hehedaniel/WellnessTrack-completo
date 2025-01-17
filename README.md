@@ -79,6 +79,11 @@ Administre bases de datos en [http://localhost:8080/](http://localhost:8080/phpm
 - Scripts detallados para facilitar la instalación y configuración.
 - Separación clara entre backend y frontend.
 
+## Código de la página web
+
+- Código para el backend creado con Symfony y Doctrine, se encunetra en el repositorio [Wellnesstrack-Back](https://github.com/hehedaniel/Wellnesstrack-Back)..
+- Código para el frontend creado con Angular, se encunetra en el repositorio [Wellnesstrack-Front](https://github.com/hehedaniel/Wellnesstrack-Front)..
+
 ## Requisitos Previos
 
 - Sistema operativo basado en Linux.
